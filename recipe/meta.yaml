@@ -1,5 +1,5 @@
 {% set name = "cloudflare" %}
-{% set version = "2.12.4" %}
+{% set version = "2.14.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/cloudflare-{{ version }}.tar.gz
-  sha256: 517f11382ea92fc591f36cc9ba95243da73e68345e52f221f03d51d6e8d786a5
+  sha256: f8dbdee7380fcc3c18dfce19ca29dc33e412b0bdbd9c162690f3aedf459e0e79
 
 build:
   number: 0
