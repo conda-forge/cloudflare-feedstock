@@ -1,5 +1,5 @@
 {% set name = "cloudflare" %}
-{% set version = "2.20.0" %}
+{% set version = "3.0.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/cloudflare-{{ version }}.tar.gz
-  sha256: 46aefc39dfaa2365d639b423cec2cd5350ae11153c7247d3eb3545bdcf01a68a
+  sha256: 212ead08c8bd9ea1796286bb5d954d157991b3dbcab0c526332f775298ccce9f
 
 build:
   number: 0
@@ -22,6 +22,12 @@ requirements:
     - python >=3.7
     - pip
   run:
+    - anyio >=3.5.0,<5
+    - distro >=1.7.0,<2
+    - httpx >=0.23.0,<1
+    - pydantic >=1.9.0,<3
+    - sniffio
+    - typing-extensions >=4.7,<5
     - python >=3.7
     - beautifulsoup4
     - jsonlines
