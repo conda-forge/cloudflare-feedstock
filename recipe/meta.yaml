@@ -1,6 +1,5 @@
 {% set name = "cloudflare" %}
-{% set version = "2.20.0" %}
-
+{% set version = "3.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -8,34 +7,33 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/cloudflare-{{ version }}.tar.gz
-  sha256: 46aefc39dfaa2365d639b423cec2cd5350ae11153c7247d3eb3545bdcf01a68a
+  sha256: 212ead08c8bd9ea1796286bb5d954d157991b3dbcab0c526332f775298ccce9f
 
 build:
-  number: 0
   noarch: python
-  entry_points:
-    - cli4=cli4.__main__:main
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
 
 requirements:
   host:
-    - python >=3.7
+    - python >=3.8
+    - hatchling
+    - hatch-fancy-pypi-readme
     - pip
   run:
-    - python >=3.7
-    - beautifulsoup4
-    - jsonlines
-    - pyyaml
-    - requests
+    - python >=3.8
+    - httpx >=0.23.0,<1
+    - pydantic >=1.9.0,<3
+    - typing-extensions >=4.7,<5
+    - anyio >=3.5.0,<5
+    - distro >=1.7.0,<2
+    - sniffio
 
 test:
   imports:
-    - CloudFlare
-    - cli4
+    - cloudflare
   commands:
     - pip check
-    # works but has a non-zero return :-/
-    # - cli4 --version
   requires:
     - pip
 
