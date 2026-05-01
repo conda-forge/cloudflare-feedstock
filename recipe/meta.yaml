@@ -1,5 +1,5 @@
 {% set name = "cloudflare" %}
-{% set version = "4.3.1" %}
+{% set version = "5.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/cloudflare-{{ version }}.tar.gz
-  sha256: b1e1c6beeb8d98f63bfe0a1cba874fc4e22e000bcc490544f956c689b3b5b258
+  sha256: 51a27cb954512d1bc7e5f452ad1850f734a74af6925c38339d675bf9f58866cc
 
 build:
   noarch: python
@@ -21,7 +21,7 @@ requirements:
     - hatch-fancy-pypi-readme
     - pip
   run:
-    - typing_extensions >=4.10,<5
+    - typing_extensions >=4.14,<5
     - python >={{ python_min }}
     - httpx >=0.23.0,<1
     - pydantic >=1.9.0,<3
