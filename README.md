@@ -3,11 +3,11 @@ About cloudflare-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/cloudflare-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/cloudflare/python-cloudflare
+Home: https://github.com/cloudflare/cloudflare-python
 
-Package license: MIT
+Package license: Apache-2.0
 
-Summary: Python wrapper for the Cloudflare v4 API
+Summary: The official Python library for the cloudflare API
 
 Current build status
 ====================
