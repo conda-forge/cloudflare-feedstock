@@ -1,0 +1,51 @@
+schema_version: 1
+
+context:
+  version: "5.7.0"
+
+package:
+  name: cloudflare
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/c/cloudflare/cloudflare-${{ version }}.tar.gz
+  sha256: 0ca2fb6017e8077bd798211d2505aa2cad186a2dac14a20aae57b8ffe43fb38b
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - hatchling ==1.26.3
+    - hatch-fancy-pypi-readme
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - httpx >=0.23.0,<1
+    - pydantic >=1.9.0,<3
+    - typing_extensions >=4.14,<5
+    - anyio >=3.5.0,<5
+    - distro >=1.7.0,<2
+    - sniffio
+
+tests:
+  - python:
+      imports:
+        - cloudflare
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+
+about:
+  summary: The official Python library for the cloudflare API
+  license: Apache-2.0
+  license_file: LICENSE
+  homepage: https://github.com/cloudflare/cloudflare-python
+
+extra:
+  recipe-maintainers:
+    - ocefpaf
