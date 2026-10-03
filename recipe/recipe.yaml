@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "5.8.0"
+  version: "5.9.0"
 
 package:
   name: cloudflare
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/c/cloudflare/cloudflare-${{ version }}.tar.gz
-  sha256: d6537b331f0d061ccafd21501741b812d4f458d76f7ea62ce13f080126c4f0a6
+  sha256: 1c9b9e243602c754e03636204272422dc45776f3babdc67f8341ca4d559d49e8
 
 build:
   number: 0
